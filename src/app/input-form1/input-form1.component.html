@@ -17,6 +17,9 @@
         <option value="inactive">Inactive</option>
     </select>
 
+    <label for="favoriteNumber">Favorite Number: </label>
+    <input id="favoriteNumber" type="text" formControlName="favoriteNumber">
+
     <p></p>
 
     <button type="button" [disabled]="!theForm.valid" (click)="save()">Save</button>

@@ -15,6 +15,10 @@ export class InputForm1Component {
       validators: [Validators.required, Validators.email]
     }],
     status: ['', Validators.required],
+    favoriteNumber: ['', {
+      validators: [Validators.required, 
+        Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')] 
+    }]
   });
 
   constructor(
@@ -32,6 +36,7 @@ export class InputForm1Component {
       firstName: 'Ben',
       lastName: 'Day',
       email: 'benday@benday.com',
-      status: 'active'});
+      status: 'active',
+      favoriteNumber: '42'});
   }
 }
