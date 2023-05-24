@@ -15,6 +15,10 @@ export class InputForm1Component {
       validators: [Validators.required, Validators.email]
     }],
     status: ['', Validators.required],
+    leastFavoriteNumber: this.fb.nonNullable.control<number>(0, {
+      validators: [Validators.required, 
+        Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')] 
+    }),
     favoriteNumber: ['', {
       validators: [Validators.required, 
         Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')] 
@@ -37,6 +41,7 @@ export class InputForm1Component {
       lastName: 'Day',
       email: 'benday@benday.com',
       status: 'active',
-      favoriteNumber: '42'});
+      favoriteNumber: '42',
+      leastFavoriteNumber: 13});
   }
 }

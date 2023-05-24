@@ -20,6 +20,9 @@
     <label for="favoriteNumber">Favorite Number: </label>
     <input id="favoriteNumber" type="text" formControlName="favoriteNumber">
 
+    <label for="leastFavoriteNumber">Least Favorite Number: </label>
+    <input id="leastFavoriteNumber" type="text" formControlName="leastFavoriteNumber">
+
     <p></p>
 
     <button type="button" [disabled]="!theForm.valid" (click)="save()">Save</button>
