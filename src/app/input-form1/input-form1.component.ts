@@ -10,7 +10,7 @@ import { TextboxFieldComponent } from '../textbox-field/textbox-field.component'
 export class InputForm1Component {
   @ViewChild(TextboxFieldComponent, { static: true })
   public textbox: TextboxFieldComponent | null = null;
-
+  // theForm: FormGroup;
   theForm = this.fb.nonNullable.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -28,6 +28,7 @@ export class InputForm1Component {
     }],
     textboxGroup1: this.textbox?.createFormGroup(),
   });
+  
 
   constructor(
     private fb: FormBuilder

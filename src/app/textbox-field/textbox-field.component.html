@@ -1,5 +1,7 @@
 <form [formGroup]="theFormGroup">
-    <p>textbox-field works!</p>
     <label for="textbox1">Textbox 1: </label>
     <input id="textbox1" type="text" formControlName="textbox1">
+    <div *ngIf="!theFormGroup.valid" class="alert alert-danger">
+        not valid
+    </div>
 </form>
