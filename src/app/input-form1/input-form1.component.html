@@ -9,6 +9,14 @@
 
     <label for="email">Email: </label>
     <input id="email" type="text" formControlName="email">
+    <div *ngIf="theForm.controls['email'].invalid" class="alert alert-danger">
+        <div *ngIf="theForm.controls['email'].errors?.['required']">
+            Email is required.
+        </div>
+        <div *ngIf="theForm.controls['email'].errors?.['email']">
+            Invalid email format.
+        </div>        
+    </div>
 
     <label for="status">Status: </label>
     <select id="status" formControlName="status">
