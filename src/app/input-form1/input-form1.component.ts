@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-form1',
@@ -9,9 +9,11 @@ import { FormBuilder } from '@angular/forms';
 export class InputForm1Component {
 
   theForm = this.fb.nonNullable.group({
-    firstName: [''],
-    lastName: [''],
-    email: [''],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    email: ['', {
+      validators: [Validators.required, Validators.email]
+    }],
   });
 
   constructor(
