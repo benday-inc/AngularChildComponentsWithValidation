@@ -7,13 +7,15 @@ import { InputForm1Component } from './input-form1/input-form1.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidationMessageDisplayComponent } from './validation-message-display/validation-message-display.component';
+import { TextboxFieldComponent } from './textbox-field/textbox-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputForm1Component,
     LandingPageComponent,
-    ValidationMessageDisplayComponent
+    ValidationMessageDisplayComponent,
+    TextboxFieldComponent
   ],
   imports: [
     BrowserModule,

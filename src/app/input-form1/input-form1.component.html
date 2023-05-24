@@ -35,6 +35,8 @@
     <label for="leastFavoriteNumber">Least Favorite Number: </label>
     <input id="leastFavoriteNumber" type="text" formControlName="leastFavoriteNumber">
 
+    <app-textbox-field></app-textbox-field>
+
     <p></p>
 
     <button type="button" [disabled]="!theForm.valid" (click)="save()">Save</button>
