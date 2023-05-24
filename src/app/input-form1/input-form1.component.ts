@@ -27,6 +27,7 @@ export class InputForm1Component {
       Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')]
     }],
     textbox1: ['', Validators.required],
+    textbox2: ['', Validators.required],
   });
 
 
@@ -54,8 +55,8 @@ export class InputForm1Component {
         status: 'active',
         favoriteNumber: '42',
         leastFavoriteNumber: 13,
-        textbox1: 'Hello, world!'
-
+        textbox1: 'Hello, world!',
+        textbox2: "What's shaking?"
       });
     } else {
       this.theForm?.patchValue({
