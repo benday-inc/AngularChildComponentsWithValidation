@@ -1,5 +1,5 @@
 <ng-container [formGroup]="parentForm">
-    <label for="textbox1">Textbox 1: </label>
+    <label for="textbox1">{{displayName}}: </label>
     <input id="textbox1" type="text" formControlName="{{controlName}}">
     <div *ngIf="!parentForm.controls[controlName]?.valid" class="alert alert-danger">
         not valid
