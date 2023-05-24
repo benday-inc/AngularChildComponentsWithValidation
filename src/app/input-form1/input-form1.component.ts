@@ -26,7 +26,7 @@ export class InputForm1Component {
       validators: [Validators.required,
       Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')]           
     }],
-    textboxGroup1: this.textbox?.createFormGroup(),
+    textbox1: ['', Validators.required],
   });
   
 
@@ -37,15 +37,14 @@ export class InputForm1Component {
   }
 
   public ngOnInit(): void {
-    this.theForm.patchValue({
-      textboxGroup1: this.textbox?.createFormGroup()
-    });
+    this.initializeChildControls();
+  }
 
-    this.textbox!.theFormGroup.setParent(this.theForm);
+  private initializeChildControls() {
+    
   }
 
   save() {
-    console.log(this.textbox);
     console.log(this.theForm?.value);
   }
 
