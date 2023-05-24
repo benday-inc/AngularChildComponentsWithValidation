@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TextboxFieldComponent } from '../textbox-field/textbox-field.component';
+import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
 
 @Component({
   selector: 'app-input-form1',
@@ -10,6 +11,10 @@ import { TextboxFieldComponent } from '../textbox-field/textbox-field.component'
 export class InputForm1Component {
   @ViewChild(TextboxFieldComponent, { static: true })
   public textbox: TextboxFieldComponent | null = null;
+
+  @ViewChild(ComboboxFieldComponent, { static: true })
+  public combobox1: ComboboxFieldComponent | null = null;
+
   // theForm: FormGroup;
   theForm = this.fb.nonNullable.group({
     firstName: ['', Validators.required],
@@ -28,6 +33,7 @@ export class InputForm1Component {
     }],
     textbox1: ['', Validators.required],
     textbox2: ['', Validators.required],
+    combobox1: ['', Validators.required],
   });
 
 
@@ -43,6 +49,14 @@ export class InputForm1Component {
 
   save() {
     console.log(this.theForm?.value);
+  }
+
+  addComboboxOption() {
+    if (this.combobox1 !== null) {
+      const now = new Date()
+      const seconds = now.getSeconds();
+      this.combobox1.addAvailableValue(`test-${seconds}`, `test option ${seconds}`);
+    }
   }
 
   populateWithData(allData: boolean) {

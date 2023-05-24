@@ -39,6 +39,10 @@
 
     <app-textbox-field [parentForm]="theForm" controlName="textbox2" displayName="Textbox 2"></app-textbox-field>
 
+    <app-combobox-field [parentForm]="theForm" controlName="combobox1" displayName="Combobox 1"></app-combobox-field>
+
+    <button type="button" (click)="addComboboxOption()">Add Combobox Option</button>
+
     <p></p>
 
     <button type="button" [disabled]="!theForm.valid" (click)="save()">Save</button>

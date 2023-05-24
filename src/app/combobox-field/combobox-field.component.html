@@ -1,0 +1,13 @@
+<ng-container [formGroup]="parentForm">
+    <label for="textbox1">{{displayName}}: </label>
+    
+    <select id="textbox1" type="text" formControlName="{{controlName}}">
+      <option value="" disabled selected>(select an option)</option>
+      <option *ngFor="let option of availableValues" [value]="option.key">
+        {{ option.value }}
+      </option>
+    </select>
+    <div *ngIf="!parentForm.controls[controlName]?.valid" class="alert alert-danger">
+        not valid
+    </div>
+</ng-container>

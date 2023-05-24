@@ -8,6 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidationMessageDisplayComponent } from './validation-message-display/validation-message-display.component';
 import { TextboxFieldComponent } from './textbox-field/textbox-field.component';
+import { ComboboxFieldComponent } from './combobox-field/combobox-field.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TextboxFieldComponent } from './textbox-field/textbox-field.component';
     InputForm1Component,
     LandingPageComponent,
     ValidationMessageDisplayComponent,
-    TextboxFieldComponent
+    TextboxFieldComponent,
+    ComboboxFieldComponent
   ],
   imports: [
     BrowserModule,
