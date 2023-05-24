@@ -24,38 +24,48 @@ export class InputForm1Component {
     }),
     favoriteNumber: ['', {
       validators: [Validators.required,
-      Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')]           
+      Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')]
     }],
     textbox1: ['', Validators.required],
   });
-  
+
 
   constructor(
     private fb: FormBuilder
   ) {
-    
+
   }
 
   public ngOnInit(): void {
-    this.initializeChildControls();
-  }
 
-  private initializeChildControls() {
-    
   }
 
   save() {
     console.log(this.theForm?.value);
   }
 
-  populateWithData() {
-    this.theForm?.patchValue({
-      firstName: 'Ben',
-      lastName: 'Day',
-      email: 'benday@benday.com',
-      status: 'active',
-      favoriteNumber: '42',
-      leastFavoriteNumber: 13
-    });
+  populateWithData(allData: boolean) {
+
+    if (allData === true) {
+      this.theForm?.patchValue({
+        firstName: 'Ben',
+        lastName: 'Day',
+        email: 'benday@benday.com',
+        status: 'active',
+        favoriteNumber: '42',
+        leastFavoriteNumber: 13,
+        textbox1: 'Hello, world!'
+
+      });
+    } else {
+      this.theForm?.patchValue({
+        firstName: 'Ben',
+        lastName: 'Day',
+        email: 'benday@benday.com',
+        status: 'active',
+        favoriteNumber: '42',
+        leastFavoriteNumber: 13
+      });
+    }
   }
 }
