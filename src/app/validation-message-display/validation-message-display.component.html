@@ -1,0 +1,8 @@
+<div *ngIf="controlToValidate !== null && controlToValidate.invalid" class="alert alert-danger">
+    <div *ngIf="controlToValidate !== null && controlToValidate.errors?.['required']">
+        {{controlDisplayName}} is required.
+    </div>
+    <div *ngIf="controlToValidate !== null && controlToValidate.errors?.['email']">
+        {{controlDisplayName}} email format.
+    </div>        
+</div>

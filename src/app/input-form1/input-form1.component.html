@@ -3,20 +3,21 @@
 <form [formGroup]="theForm">
     <label for="first-name">First Name: </label>
     <input id="first-name" type="text" formControlName="firstName">
+    <app-validation-message-display 
+        controlDisplayName="First name"
+        [controlToValidate]="theForm.controls['firstName']"></app-validation-message-display>
 
     <label for="last-name">Last Name: </label>
     <input id="last-name" type="text" formControlName="lastName">
+    <app-validation-message-display 
+        controlDisplayName="Last name"
+        [controlToValidate]="theForm.controls['lastName']"></app-validation-message-display>
 
     <label for="email">Email: </label>
     <input id="email" type="text" formControlName="email">
-    <div *ngIf="theForm.controls['email'].invalid" class="alert alert-danger">
-        <div *ngIf="theForm.controls['email'].errors?.['required']">
-            Email is required.
-        </div>
-        <div *ngIf="theForm.controls['email'].errors?.['email']">
-            Invalid email format.
-        </div>        
-    </div>
+    <app-validation-message-display 
+        controlDisplayName="Email"
+        [controlToValidate]="theForm.controls['email']"></app-validation-message-display>
 
     <label for="status">Status: </label>
     <select id="status" formControlName="status">
@@ -24,6 +25,9 @@
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
     </select>
+    <app-validation-message-display 
+        controlDisplayName="status"
+        [controlToValidate]="theForm.controls['status']"></app-validation-message-display>
 
     <label for="favoriteNumber">Favorite Number: </label>
     <input id="favoriteNumber" type="text" formControlName="favoriteNumber">

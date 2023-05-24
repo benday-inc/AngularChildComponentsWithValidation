@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { InputForm1Component } from './input-form1/input-form1.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ValidationMessageDisplayComponent } from './validation-message-display/validation-message-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputForm1Component,
-    LandingPageComponent
+    LandingPageComponent,
+    ValidationMessageDisplayComponent
   ],
   imports: [
     BrowserModule,
