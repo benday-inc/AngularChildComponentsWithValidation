@@ -26,4 +26,12 @@ export class InputForm1Component {
   save() {
     console.log(this.theForm.value);
   }
+
+  populateWithData() {
+    this.theForm.patchValue({
+      firstName: 'Ben',
+      lastName: 'Day',
+      email: 'benday@benday.com',
+      status: 'active'});
+  }
 }
