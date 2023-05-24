@@ -14,6 +14,7 @@ export class InputForm1Component {
     email: ['', {
       validators: [Validators.required, Validators.email]
     }],
+    status: ['', Validators.required],
   });
 
   constructor(

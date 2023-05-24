@@ -3,12 +3,21 @@
 <form [formGroup]="theForm">
     <label for="first-name">First Name: </label>
     <input id="first-name" type="text" formControlName="firstName">
-  
+
     <label for="last-name">Last Name: </label>
     <input id="last-name" type="text" formControlName="lastName">
 
     <label for="email">Email: </label>
     <input id="email" type="text" formControlName="email">
+
+    <label for="status">Status: </label>
+    <select id="status" formControlName="status">
+        <option value="">(not selected)</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+    </select>
+
+    <p></p>
 
     <button type="button" [disabled]="!theForm.valid" (click)="save()">Save</button>
 </form>
