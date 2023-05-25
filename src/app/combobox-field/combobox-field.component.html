@@ -9,7 +9,7 @@
         {{ option.value }}
       </option>
     </select>
-    <div *ngIf="!parentForm.controls[controlName]?.valid" class="alert alert-danger">
+    <div *ngIf="!parentForm.controls[controlName]?.valid" class="validation-message">
         not valid
     </div>
 </ng-container>

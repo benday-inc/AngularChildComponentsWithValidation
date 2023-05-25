@@ -86,6 +86,11 @@
     width: 100%;
     padding: .5rem;
   }
+
+  .validation-message {
+    color: red;
+    font-style: italic;
+  }
   
   
   /*

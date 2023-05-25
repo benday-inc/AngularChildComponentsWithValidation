@@ -1,4 +1,4 @@
-<div *ngIf="controlToValidate !== null && controlToValidate.invalid" class="alert alert-danger">
+<div *ngIf="controlToValidate !== null && controlToValidate.invalid" class="validation-message">
     <div *ngIf="controlToValidate !== null && controlToValidate.errors?.['required']">
         {{controlDisplayName}} is required.
     </div>

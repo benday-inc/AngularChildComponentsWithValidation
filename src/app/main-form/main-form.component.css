@@ -7,3 +7,15 @@ form {
     margin: .5em 0;
     font-weight: bold;
   }
+
+  .action-button {
+    width: 300px;
+  }
+
+  .button-cell {
+    text-align: center;
+  }
+
+  .form-cell {
+    width: 55%;
+  }
