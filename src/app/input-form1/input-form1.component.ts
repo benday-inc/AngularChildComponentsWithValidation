@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { TextboxFieldComponent } from '../textbox-field/textbox-field.component';
 import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
 
@@ -15,7 +15,6 @@ export class InputForm1Component {
   @ViewChild(ComboboxFieldComponent, { static: true })
   public combobox1: ComboboxFieldComponent | null = null;
 
-  // theForm: FormGroup;
   theForm = this.fb.nonNullable.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -40,10 +39,6 @@ export class InputForm1Component {
   constructor(
     private fb: FormBuilder
   ) {
-
-  }
-
-  public ngOnInit(): void {
 
   }
 

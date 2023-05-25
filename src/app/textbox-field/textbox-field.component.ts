@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ControlContainer, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { ControlContainer, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-textbox-field',
@@ -16,11 +16,4 @@ export class TextboxFieldComponent {
 
   @Input()
   displayName = '(displayName not set)';
-
-  constructor() {
-    
-  }
-
-  ngOnInit(): void {
-  }
 }
