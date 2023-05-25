@@ -3,20 +3,18 @@
 <form [formGroup]="theForm">
     <label for="first-name">First Name: </label>
     <input id="first-name" type="text" formControlName="firstName">
-    <app-validation-message-display 
-        controlDisplayName="First name"
+    <app-validation-message-display controlDisplayName="First name"
         [controlToValidate]="theForm.controls['firstName']"></app-validation-message-display>
+    <button type="button" (click)="toggleDisabledFields()">Disable / Enable Field</button>
 
     <label for="last-name">Last Name: </label>
     <input id="last-name" type="text" formControlName="lastName">
-    <app-validation-message-display 
-        controlDisplayName="Last name"
+    <app-validation-message-display controlDisplayName="Last name"
         [controlToValidate]="theForm.controls['lastName']"></app-validation-message-display>
 
     <label for="email">Email: </label>
     <input id="email" type="text" formControlName="email">
-    <app-validation-message-display 
-        controlDisplayName="Email"
+    <app-validation-message-display controlDisplayName="Email"
         [controlToValidate]="theForm.controls['email']"></app-validation-message-display>
 
     <label for="status">Status: </label>
@@ -25,8 +23,7 @@
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
     </select>
-    <app-validation-message-display 
-        controlDisplayName="status"
+    <app-validation-message-display controlDisplayName="status"
         [controlToValidate]="theForm.controls['status']"></app-validation-message-display>
 
     <label for="favoriteNumber">Favorite Number: </label>
@@ -34,6 +31,7 @@
 
     <label for="leastFavoriteNumber">Least Favorite Number: </label>
     <input id="leastFavoriteNumber" type="text" formControlName="leastFavoriteNumber">
+
 
     <app-textbox-field [parentForm]="theForm" controlName="textbox1" displayName="Textbox 1"></app-textbox-field>
 
@@ -48,4 +46,5 @@
     <button type="button" [disabled]="!theForm.valid" (click)="save()">Save</button>
     <button type="button" (click)="populateWithData(true)">Populate with All Data</button>
     <button type="button" (click)="populateWithData(false)">Populate with Some Data</button>
+    <button type="button" (click)="getValidationSummary()">Display Validation Summary</button>
 </form>

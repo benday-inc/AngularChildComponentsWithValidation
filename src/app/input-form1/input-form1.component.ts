@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { TextboxFieldComponent } from '../textbox-field/textbox-field.component';
 import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
 
@@ -46,12 +46,41 @@ export class InputForm1Component {
     console.log(this.theForm?.value);
   }
 
+  toggleDisabledFields() {
+    if (this.theForm === null) {
+      return;
+    }
+
+    this.toggleField(this.theForm.controls.firstName);
+    this.toggleField(this.theForm.controls.textbox1);
+  }
+
+  toggleField(control: FormControl) {
+    if (control.disabled === true) {
+      control.enable()
+    }
+    else {
+      control.disable()
+    }
+  }
+
   addComboboxOption() {
     if (this.combobox1 !== null) {
       const now = new Date()
       const seconds = now.getSeconds();
       this.combobox1.addAvailableValue(`test-${seconds}`, `test option ${seconds}`);
     }
+  }
+
+  getValidationSummary() {
+    const untypedForm = (this.theForm as FormGroup);
+
+    Object.keys(untypedForm.controls).forEach(key => {
+      const control = untypedForm.controls[key];
+      if (control.enabled === true && control.valid === false) {
+        console.log(`invalid control ${key}: ${JSON.stringify(control.errors)}`);
+      }
+    });
   }
 
   populateWithData(allData: boolean) {
