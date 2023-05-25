@@ -54,16 +54,23 @@ export class MainFormComponent implements OnInit {
     console.log(this.theForm?.value);
   }
 
-  toggleDisabledFields() {
+  toggleFirstNameField() {
     if (this.theForm === null) {
       return;
     }
 
     this.toggleField(this.theForm.controls.firstName);
+  }
+
+  toggleTextbox1Field() {
+    if (this.theForm === null) {
+      return;
+    }
+
     this.toggleField(this.theForm.controls.textbox1);
   }
 
-  toggleField(control: FormControl) {
+  private toggleField(control: FormControl) {
     if (control.disabled === true) {
       control.enable()
     }
@@ -94,6 +101,12 @@ export class MainFormComponent implements OnInit {
   populateWithData(allData: boolean) {
 
     if (allData === true) {
+      this.addComboboxOption();
+      this.addComboboxOption();
+      this.addComboboxOption();
+      
+      const comboxBoxValue = this.combobox1?.availableValues[1];
+
       this.theForm?.patchValue({
         firstName: 'Ben',
         lastName: 'Day',
@@ -102,7 +115,8 @@ export class MainFormComponent implements OnInit {
         favoriteNumber: '42',
         leastFavoriteNumber: 13,
         textbox1: 'Hello, world!',
-        textbox2: "What's shaking?"
+        textbox2: "What's shaking?",
+        combobox1: comboxBoxValue?.key
       });
     } else {
       this.theForm?.patchValue({

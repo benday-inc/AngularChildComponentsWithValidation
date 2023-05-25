@@ -1,11 +1,12 @@
-<h1>Input Form 1</h1>
+<h1>Angular Typed Reactive Form with Child Controls &amp; Validation</h1>
+<h3><a href="https://github.com/benday-inc/AngularChildComponentsWithValidation" target="_blank">source code</a></h3>
 
 <form [formGroup]="theForm">
     <label for="first-name">First Name: </label>
     <input id="first-name" type="text" formControlName="firstName">
     <app-validation-message-display controlDisplayName="First name"
         [controlToValidate]="theForm.controls['firstName']"></app-validation-message-display>
-    <button type="button" (click)="toggleDisabledFields()">Disable / Enable Field</button>
+    <button type="button" (click)="toggleFirstNameField()">Disable / Enable Field</button>
 
     <label for="last-name">Last Name: </label>
     <input id="last-name" type="text" formControlName="lastName">
@@ -34,6 +35,8 @@
 
 
     <app-textbox-field [parentForm]="theForm" controlName="textbox1" displayName="Textbox 1"></app-textbox-field>
+
+    <button type="button" (click)="toggleTextbox1Field()">Disable / Enable Field</button>
 
     <app-textbox-field [parentForm]="theForm" controlName="textbox2" displayName="Textbox 2"></app-textbox-field>
 
