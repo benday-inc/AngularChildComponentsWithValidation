@@ -31,6 +31,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/AngularChildComponentsWithValidation/",
               "budgets": [
                 {
                   "type": "initial",
