@@ -41,6 +41,10 @@
 
     <button type="button" (click)="addComboboxOption()">Add Combobox Option</button>
 
+    <div>
+        Combobox value changed message: {{comboboxChangeMessage}}
+    </div>
+
     <p></p>
 
     <button type="button" [disabled]="!theForm.valid" (click)="save()">Save</button>

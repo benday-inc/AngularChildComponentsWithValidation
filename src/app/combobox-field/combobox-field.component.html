@@ -1,7 +1,9 @@
 <ng-container [formGroup]="parentForm">
     <label for="textbox1">{{displayName}}: </label>
     
-    <select id="textbox1" type="text" formControlName="{{controlName}}">
+    <select id="textbox1" type="text" formControlName="{{controlName}}"
+    (ngModelChange)="selectionChanged($event)"
+    >
       <option value="" disabled selected>(select an option)</option>
       <option *ngFor="let option of availableValues" [value]="option.key">
         {{ option.value }}

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { TextboxFieldComponent } from '../textbox-field/textbox-field.component';
 import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
@@ -8,12 +8,14 @@ import { ComboboxFieldComponent } from '../combobox-field/combobox-field.compone
   templateUrl: './input-form1.component.html',
   styleUrls: ['./input-form1.component.css']
 })
-export class InputForm1Component {
+export class InputForm1Component implements OnInit {
   @ViewChild(TextboxFieldComponent, { static: true })
   public textbox: TextboxFieldComponent | null = null;
 
   @ViewChild(ComboboxFieldComponent, { static: true })
   public combobox1: ComboboxFieldComponent | null = null;
+
+  comboboxChangeMessage = '(no changes yet)';
 
   theForm = this.fb.nonNullable.group({
     firstName: ['', Validators.required],
@@ -40,6 +42,12 @@ export class InputForm1Component {
     private fb: FormBuilder
   ) {
 
+  }
+
+  ngOnInit(): void {
+    this.combobox1?.selectedValueChanged.subscribe((val) => {
+      this.comboboxChangeMessage = `combobox1 changed to ${val}`;
+    });
   }
 
   save() {

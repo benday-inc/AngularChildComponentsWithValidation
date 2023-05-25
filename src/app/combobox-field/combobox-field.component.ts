@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { KeyValuePair } from '../key-value-pair';
 
@@ -17,6 +17,10 @@ export class ComboboxFieldComponent {
   @Input()
   displayName = '(displayName not set)';
 
+  @Output() 
+  selectedValueChanged = new EventEmitter();
+  
+
   public availableValues: KeyValuePair[] = [];
 
   public addAvailableValue(key: string, value: string) {
@@ -26,5 +30,10 @@ export class ComboboxFieldComponent {
     temp.value = value;
 
     this.availableValues.push(temp);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  selectionChanged(event: Event) {
+    this.selectedValueChanged?.emit(this.parentForm.get(this.controlName)?.value);
   }
 }
