@@ -4,11 +4,11 @@ import { TextboxFieldComponent } from '../textbox-field/textbox-field.component'
 import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
 
 @Component({
-  selector: 'app-input-form1',
-  templateUrl: './input-form1.component.html',
-  styleUrls: ['./input-form1.component.css']
+  selector: 'app-main-form',
+  templateUrl: './main-form.component.html',
+  styleUrls: ['./main-form.component.css']
 })
-export class InputForm1Component implements OnInit {
+export class MainFormComponent implements OnInit {
   @ViewChild(TextboxFieldComponent, { static: true })
   public textbox: TextboxFieldComponent | null = null;
 

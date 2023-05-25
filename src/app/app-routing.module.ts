@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InputForm1Component } from './input-form1/input-form1.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MainFormComponent } from './main-form/main-form.component';
 
 const routes: Routes = [
-  { path: '', component: LandingPageComponent },
-  { path: 'form1', component: InputForm1Component }
+  { path: '', component: MainFormComponent },
+  { path: 'home', component: LandingPageComponent },
+  { path: 'form1', component: MainFormComponent }
 ];
 
 @NgModule({
@@ -14,6 +15,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
   
-
-
 }
