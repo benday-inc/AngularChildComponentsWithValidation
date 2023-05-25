@@ -24,11 +24,11 @@ export class InputForm1Component {
     status: ['', Validators.required],
     leastFavoriteNumber: this.fb.nonNullable.control<number>(0, {
       validators: [Validators.required,
-      Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')]
+      Validators.pattern('^-?[0-9]+(.[0-9]*)?$')]
     }),
     favoriteNumber: ['', {
       validators: [Validators.required,
-      Validators.pattern('^-?[0-9]+(\.[0-9]*)?$')]
+      Validators.pattern('^-?[0-9]+(.[0-9]*)?$')]
     }],
     textbox1: ['', Validators.required],
     textbox2: ['', Validators.required],
