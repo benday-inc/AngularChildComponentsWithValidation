@@ -16,6 +16,8 @@ export class MainFormComponent implements OnInit {
   public combobox1: ComboboxFieldComponent | null = null;
 
   comboboxChangeMessage = '(no changes yet)';
+  saveOutput = '(save not clicked yet)';
+  validationSummary = '(no validation summary yet)';
 
   theForm = this.fb.nonNullable.group({
     firstName: ['', Validators.required],
@@ -52,6 +54,24 @@ export class MainFormComponent implements OnInit {
 
   save() {
     console.log(this.theForm?.value);
+    this.saveOutput = JSON.stringify(this.theForm?.value).replace(/,/g, ',\r\n');
+  }
+
+  reset() {
+    this.theForm?.patchValue({
+      firstName: '',
+      lastName: '',
+      email: '',
+      status: '',
+      favoriteNumber: '',
+      leastFavoriteNumber: 0,
+      textbox1: '',
+      textbox2: "",
+      combobox1: ''
+    });
+
+    this.validationSummary = '(no validation summary yet)';
+    this.saveOutput = '(save not clicked yet)';
   }
 
   toggleFirstNameField() {
@@ -90,12 +110,17 @@ export class MainFormComponent implements OnInit {
   getValidationSummary() {
     const untypedForm = (this.theForm as FormGroup);
 
+    let message = '';
+
     Object.keys(untypedForm.controls).forEach(key => {
       const control = untypedForm.controls[key];
       if (control.enabled === true && control.valid === false) {
         console.log(`invalid control ${key}: ${JSON.stringify(control.errors)}`);
+        message += `${key}: ${JSON.stringify(control.errors)}\r\n`;
       }
     });
+
+    this.validationSummary = message;
   }
 
   populateWithData(allData: boolean) {

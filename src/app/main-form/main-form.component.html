@@ -2,9 +2,9 @@
 <h3><a href="https://github.com/benday-inc/AngularChildComponentsWithValidation" target="_blank">source code</a></h3>
 
 <form [formGroup]="theForm">
-    <table>
+    <table border="1">
         <tr>
-            <td class="form-cell">
+            <td class="form-cell" rowspan="2">
                 <fieldset>
                     <label for="first-name">First Name: </label>
                     <input id="first-name" type="text" formControlName="firstName">
@@ -52,7 +52,7 @@
                     <button type="button" (click)="addComboboxOption()">Add Combobox Option</button>
 
                     <div>
-                        Combobox value changed message: 
+                        Combobox value changed message:
                         <br />{{comboboxChangeMessage}}
                     </div>
                 </fieldset>
@@ -69,8 +69,23 @@
                 <button type="button" class="action-button" (click)="getValidationSummary()">Display Validation
                     Summary</button>
                 <br />
-                <button type="button" class="action-button" [disabled]="!theForm.valid" (click)="save()">Save</button>
+                <button type="button" class="action-button" (click)="reset()">reset</button>
                 <br />
+                <button type="button" class="action-button" [disabled]="!theForm.valid" (click)="save()">Save</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="messages-cell">
+                <p>
+                    <b>Validation Summary</b>:
+                    <br />
+                    {{validationSummary}}
+                </p>
+                <p>
+                    <b>Output from Save</b>:
+                    <br />
+                    {{saveOutput}}
+                </p>
             </td>
         </tr>
 
