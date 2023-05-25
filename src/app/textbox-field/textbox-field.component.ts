@@ -15,7 +15,7 @@ export class TextboxFieldComponent {
   controlName!: string;
 
   @Input()
-  displayName: string = '(displayName not set)';
+  displayName = '(displayName not set)';
 
   constructor() {
     

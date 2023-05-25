@@ -8,6 +8,6 @@ import { FormControl } from '@angular/forms';
 })
 export class ValidationMessageDisplayComponent {
   @Input() controlToValidate: FormControl<string> | null = null;
-  @Input() controlDisplayName: string = '(control display name not set)';
+  @Input() controlDisplayName = '(control display name not set)';
   
 }

@@ -15,7 +15,7 @@ export class ComboboxFieldComponent {
   controlName!: string;
 
   @Input()
-  displayName: string = '(displayName not set)';
+  displayName = '(displayName not set)';
 
   public availableValues: KeyValuePair[] = [];
 
