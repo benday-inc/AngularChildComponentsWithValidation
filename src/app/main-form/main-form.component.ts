@@ -9,7 +9,7 @@ import { ComboboxFieldComponent } from '../combobox-field/combobox-field.compone
   styleUrls: ['./main-form.component.css']
 })
 export class MainFormComponent implements OnInit {
-  @ViewChild(TextboxFieldComponent, { static: true })
+  @ViewChild('textbox1', { static: true })
   public textbox: TextboxFieldComponent | null = null;
 
   @ViewChild(ComboboxFieldComponent, { static: true })
@@ -49,6 +49,13 @@ export class MainFormComponent implements OnInit {
   ngOnInit(): void {
     this.combobox1?.selectedValueChanged.subscribe((val) => {
       this.comboboxChangeMessage = `combobox1 changed to ${val}`;
+    });
+
+    this.textbox?.changed.subscribe((val) => {
+      const message = `textbox1 changed to ${val}`;
+      this.theForm.patchValue({
+        textbox2: message
+      });
     });
   }
 
@@ -129,7 +136,7 @@ export class MainFormComponent implements OnInit {
       this.addComboboxOption();
       this.addComboboxOption();
       this.addComboboxOption();
-      
+
       const comboxBoxValue = this.combobox1?.availableValues[1];
 
       this.theForm?.patchValue({

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ControlContainer, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
@@ -16,4 +16,12 @@ export class TextboxFieldComponent {
 
   @Input()
   displayName = '(displayName not set)';
+
+  @Output() 
+  changed = new EventEmitter();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  valueChanged(event: Event) {
+    this.changed?.emit(this.parentForm.get(this.controlName)?.value);
+  }
 }

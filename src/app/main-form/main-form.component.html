@@ -38,8 +38,8 @@
                     <label for="leastFavoriteNumber">Least Favorite Number: </label>
                     <input id="leastFavoriteNumber" type="text" formControlName="leastFavoriteNumber">
 
-
                     <app-textbox-field [parentForm]="theForm" controlName="textbox1"
+                        #textbox1
                         displayName="Textbox 1"></app-textbox-field>
 
                     <button type="button" (click)="toggleTextbox1Field()">Disable / Enable Field</button>

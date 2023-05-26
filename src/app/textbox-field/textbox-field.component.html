@@ -1,6 +1,6 @@
 <ng-container [formGroup]="parentForm">
     <label for="textbox1">{{displayName}}: </label>
-    <input id="textbox1" type="text" formControlName="{{controlName}}">
+    <input id="textbox1" type="text" formControlName="{{controlName}}" (ngModelChange)="valueChanged($event)">
     <div *ngIf="parentForm.controls[controlName].enabled === true && !parentForm.controls[controlName].valid" class="validation-message">
         not valid
     </div>
