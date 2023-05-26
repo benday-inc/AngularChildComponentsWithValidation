@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MainFormComponent } from './main-form.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TextboxFieldComponent } from '../textbox-field/textbox-field.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
+import { ValidationMessageDisplayComponent } from '../validation-message-display/validation-message-display.component';
 
 describe('MainFormComponent', () => {
   let component: MainFormComponent;
@@ -12,9 +12,11 @@ describe('MainFormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MainFormComponent],
-      imports: [HttpClientModule, ReactiveFormsModule, FormsModule, RouterTestingModule],
-      // imports: [HttpClientModule, ReactiveFormsModule, RouterTestingModule],
+      declarations: [MainFormComponent,
+        TextboxFieldComponent,
+        ComboboxFieldComponent,
+        ValidationMessageDisplayComponent],
+      imports: [ReactiveFormsModule],
     });
     fixture = TestBed.createComponent(MainFormComponent);
     component = fixture.componentInstance;
