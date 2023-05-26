@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ComboboxFieldComponent } from './combobox-field.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 
 describe('ComboboxFieldComponent', () => {
   let component: ComboboxFieldComponent;
@@ -12,8 +10,7 @@ describe('ComboboxFieldComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ComboboxFieldComponent],
-      imports: [HttpClientModule, ReactiveFormsModule, FormsModule, RouterTestingModule],
-      providers: [ { provide: FormGroup, useValue: new FormBuilder().group } ]
+      imports: [ReactiveFormsModule],
     });
     fixture = TestBed.createComponent(ComboboxFieldComponent);
     component = fixture.componentInstance;
