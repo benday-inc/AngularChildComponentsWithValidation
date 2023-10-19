@@ -3,7 +3,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  const expectedTitle = 'Angular Typed Reactive Form with Child Controls & Validation';
   beforeEach(() => TestBed.configureTestingModule({
     imports: [RouterTestingModule],
     declarations: [AppComponent]
