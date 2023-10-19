@@ -9,6 +9,7 @@ import { ValidationMessageDisplayComponent } from './validation-message-display/
 import { TextboxFieldComponent } from './textbox-field/textbox-field.component';
 import { ComboboxFieldComponent } from './combobox-field/combobox-field.component';
 import { MainFormComponent } from './main-form/main-form.component';
+import { CheckboxFieldComponent } from './checkbox-field/checkbox-field.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MainFormComponent } from './main-form/main-form.component';
     LandingPageComponent,
     ValidationMessageDisplayComponent,
     TextboxFieldComponent,
-    ComboboxFieldComponent
+    ComboboxFieldComponent,
+    CheckboxFieldComponent
   ],
   imports: [
     BrowserModule,

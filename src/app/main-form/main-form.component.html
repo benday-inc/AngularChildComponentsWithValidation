@@ -56,6 +56,13 @@
                         Combobox value changed message:
                         <br />{{comboboxChangeMessage}}
                     </div>
+
+                    <app-checkbox-field [parentForm]="theForm" controlName="checkbox1"
+                        (valueChanged)="checkbox1Changed($event)"
+                        displayName="Checkbox 1"></app-checkbox-field>
+
+                    <app-checkbox-field [parentForm]="theForm" controlName="checkbox2"
+                        displayName="Checkbox 2"></app-checkbox-field>
                 </fieldset>
             </td>
             <td style="padding-left: 2em;" class="button-cell">

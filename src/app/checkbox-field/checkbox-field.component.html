@@ -1,0 +1,11 @@
+<ng-container [formGroup]="parentForm">
+    <label for="checkbox1">{{displayName}}: </label>
+    
+    <input type="checkbox" formControlName="{{controlName}}"
+      (ngModelChange)="selectionChanged($event)"
+    />
+
+    <div *ngIf="!parentForm.controls[controlName]?.valid" class="validation-message">
+        not valid
+    </div>
+</ng-container>

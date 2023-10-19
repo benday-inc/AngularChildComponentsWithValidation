@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { TextboxFieldComponent } from '../textbox-field/textbox-field.component';
 import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
+import { CheckboxFieldComponent } from '../checkbox-field/checkbox-field.component';
 
 @Component({
   selector: 'app-main-form',
@@ -9,11 +10,15 @@ import { ComboboxFieldComponent } from '../combobox-field/combobox-field.compone
   styleUrls: ['./main-form.component.css']
 })
 export class MainFormComponent implements OnInit {
+
   @ViewChild('textbox1', { static: true })
   public textbox: TextboxFieldComponent | null = null;
 
   @ViewChild(ComboboxFieldComponent, { static: true })
   public combobox1: ComboboxFieldComponent | null = null;
+
+  @ViewChild(CheckboxFieldComponent, { static: true })
+  public checkbox1: CheckboxFieldComponent | null = null;
 
   comboboxChangeMessage = '(no changes yet)';
   saveOutput = '(save not clicked yet)';
@@ -37,6 +42,8 @@ export class MainFormComponent implements OnInit {
     textbox1: ['', Validators.required],
     textbox2: ['', Validators.required],
     combobox1: ['', Validators.required],
+    checkbox1: [true, Validators.required],
+    checkbox2: [false, Validators.required],
   });
 
 
@@ -79,6 +86,12 @@ export class MainFormComponent implements OnInit {
 
     this.validationSummary = '(no validation summary yet)';
     this.saveOutput = '(save not clicked yet)';
+  }
+
+  checkbox1Changed($event: any) {
+    console.log(`checkbox1 changed to ${$event}`);
+    const checkbox1Value = this.theForm.controls.checkbox1.value;
+    this.theForm.controls.checkbox2.setValue(!checkbox1Value);
   }
 
   toggleFirstNameField() {
