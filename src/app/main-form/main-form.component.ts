@@ -156,6 +156,16 @@ export class MainFormComponent implements OnInit {
     return returnValue;
   }
 
+  changeComboboxWithItemSourceValue() {
+    const currentValue = this.theForm?.controls.comboboxWithItemSource.value;
+
+    if (currentValue === '1') {
+      this.theForm?.controls.comboboxWithItemSource.setValue('2');
+    } else {
+      this.theForm?.controls.comboboxWithItemSource.setValue('1');
+    }
+  }
+
   populateWithData(allData: boolean) {
 
     if (allData === true) {
