@@ -20,7 +20,7 @@ export class ComboboxFieldComponent {
   @Output() 
   selectedValueChanged = new EventEmitter();
   
-
+  @Input()
   public availableValues: KeyValuePair[] = [];
 
   public addAvailableValue(key: string, value: string) {

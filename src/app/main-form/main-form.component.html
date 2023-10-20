@@ -1,6 +1,7 @@
 <h1>Sample Code: Angular Typed Reactive Form with Child Controls &amp; Validation</h1>
 <h3><a href="https://www.benday.com/2023/05/25/sample-code-angular-typed-reactive-form-with-child-components-validations/"
-    target="_blank">blog post</a> | <a href="https://github.com/benday-inc/AngularChildComponentsWithValidation" target="_blank">source code</a></h3>
+        target="_blank">blog post</a> | <a href="https://github.com/benday-inc/AngularChildComponentsWithValidation"
+        target="_blank">source code</a></h3>
 
 <form [formGroup]="theForm">
     <table>
@@ -38,8 +39,7 @@
                     <label for="leastFavoriteNumber">Least Favorite Number: </label>
                     <input id="leastFavoriteNumber" type="text" formControlName="leastFavoriteNumber">
 
-                    <app-textbox-field [parentForm]="theForm" controlName="textbox1"
-                        #textbox1
+                    <app-textbox-field [parentForm]="theForm" controlName="textbox1" #textbox1
                         displayName="Textbox 1"></app-textbox-field>
 
                     <button type="button" (click)="toggleTextbox1Field()">Disable / Enable Field</button>
@@ -58,11 +58,14 @@
                     </div>
 
                     <app-checkbox-field [parentForm]="theForm" controlName="checkbox1"
-                        (valueChanged)="checkbox1Changed($event)"
-                        displayName="Checkbox 1"></app-checkbox-field>
+                        (valueChanged)="checkbox1Changed($event)" displayName="Checkbox 1"></app-checkbox-field>
 
                     <app-checkbox-field [parentForm]="theForm" controlName="checkbox2"
                         displayName="Checkbox 2"></app-checkbox-field>
+
+                    <app-combobox-field [parentForm]="theForm" controlName="comboboxWithItemSource"
+                        displayName="Combobox with Item Source" [availableValues]="getAvailableValues()"></app-combobox-field>
+
                 </fieldset>
             </td>
             <td style="padding-left: 2em;" class="button-cell">

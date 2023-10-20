@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { TextboxFieldComponent } from '../textbox-field/textbox-field.component';
 import { ComboboxFieldComponent } from '../combobox-field/combobox-field.component';
 import { CheckboxFieldComponent } from '../checkbox-field/checkbox-field.component';
+import { KeyValuePair } from '../key-value-pair';
 
 @Component({
   selector: 'app-main-form',
@@ -42,6 +43,7 @@ export class MainFormComponent implements OnInit {
     textbox1: ['', Validators.required],
     textbox2: ['', Validators.required],
     combobox1: ['', Validators.required],
+    comboboxWithItemSource: ['2', Validators.required],
     checkbox1: [true, Validators.required],
     checkbox2: [false, Validators.required],
   });
@@ -141,6 +143,17 @@ export class MainFormComponent implements OnInit {
     });
 
     this.validationSummary = message;
+  }
+
+  getAvailableValues(): KeyValuePair[] {
+    const returnValue: KeyValuePair[] = [];
+
+    returnValue.push({ key: '1', value: 'One' });
+    returnValue.push({ key: '2', value: 'Two' });
+    returnValue.push({ key: '3', value: 'Three' });
+    returnValue.push({ key: '4', value: 'Four' });
+
+    return returnValue;
   }
 
   populateWithData(allData: boolean) {
